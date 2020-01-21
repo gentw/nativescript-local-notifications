@@ -26,6 +26,19 @@
       });
     },
 
+    mounted() {
+      let d = new Date();
+      let h = d.getHours();
+      setInterval(() => {
+        if(h == 23) {
+          this.onTapCancelAll();
+          this.onTapScheduleNotification() 
+        }
+
+      }, 3600000); 
+      
+    },
+    
     data() {
       return {
         message: "Tap a button above..",
